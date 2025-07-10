@@ -9,34 +9,17 @@ const getRandomhand = () => {
 };
 
 const checkOption = (optionHuman) => {
-
     const actualHand = getRandomhand();
-
     console.log(`You option is: ${optionHuman}`);
     console.log(`The PC option is: ${actualHand}`);
 
-    if (chooseHuman === actualHand) {
-        console.log(`It's a draw!.`);
-    } else if (chooseHuman === 'rock' && actualHand === 'scissors' || actualHand === 'lizard') {
-        console.log(`You Win! 🎉`);
-
-    } else if (chooseHuman === 'paper' && actualHand === 'rock' || actualHand === 'spock') {
-        console.log(`You Win! 🎉`);
-
-    } else if (chooseHuman === 'scissors' && actualHand === 'paper' || actualHand === 'lizard') {
-        console.log(`You Win! 🎉`);
-
-    } else if (chooseHuman === 'lizard' && actualHand === 'paper' || actualHand === 'spock') {
-        console.log(`You Win! 🎉`);
-
-    } else if (chooseHuman === 'spock' && actualHand === 'scissors' || actualHand === 'Rock') {
-        console.log(`You Win! 🎉`);
-
-    } else {
-        console.log(`You lose! 😢`);
-
-    }
-
+    if (chooseHuman === actualHand)  console.log(`It's a draw!.`);
+    if (chooseHuman === 'rock' && (actualHand === 'scissors' || actualHand === 'lizard')) return console.log(`You Win! 🎉`);
+    if (chooseHuman === 'paper' && (actualHand === 'rock' || actualHand === 'spock')) return console.log(`You Win! 🎉`);
+    if (chooseHuman === 'scissors' && (actualHand === 'paper' || actualHand === 'lizard')) return console.log(`You Win! 🎉`);
+    if (chooseHuman === 'lizard' && (actualHand === 'paper' || actualHand === 'spock')) return console.log(`You Win! 🎉`);
+    if (chooseHuman === 'spock' && (actualHand === 'scissors' || actualHand === 'Rock')) return console.log(`You Win! 🎉`);
+    return console.log(`You lose 😢`);   
 };
 
 const chooseHuman = prompt('choose an option: rock, paper, scissors, lizard, spock').toLowerCase();
